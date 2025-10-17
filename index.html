@@ -242,18 +242,19 @@
 
         <div id="method" class="section">
             <h2>Our Method</h2>
+            <img src="./assets/method.png" alt="Method overview diagram">
             <p>
-                We introduce a unified framework that automates the design and control of soft swimmers. Our approach
-                bypasses the need for manual, morphology-dependent actuator design by using a <strong>reduced-mode
-                    control space</strong> based on Linear Blend Skinning (LBS). This allows us to generate complex,
-                plausible deformations from a few simple parameters.
-            </p>
-            <p>
-                This is coupled with a high-fidelity, <strong>GPU-accelerated simulator</strong> that accurately models
-                the critical fluid-structure interactions, enabling the discovery of advanced swimming strategies like
-                vortex exploitation through reinforcement learning.
+                We introduce a unified, reduced mode control framework for free-form soft swimmers that automates policy
+                learning across various morphologies. Our approach eliminates human priors while preserving deformation
+                expressiveness.
             </p>
             <img src="./assets/reduce_mode_control.gif" alt="Diagram illustrating the reduced mode control space">
+            <p>
+                This is coupled with a high-fidelity, <strong>GPU-accelerated simulator</strong> that accurately models
+                the critical fluid-structure interactions, enabling efficient RL training while resolving hydrodynamic
+                phenomena critical to swimming.
+            </p>
+
         </div>
 
         <div id="morphologies" class="section">
@@ -268,10 +269,37 @@
             <p>Our method successfully discovers effective and biologically plausible swimming gaits for a wide variety
                 of shapes, significantly outperforming baselines, especially on unconventional morphologies where
                 expert-designed heuristics fail.</p>
-            <img src="https://i.imgur.com/your-figure-3-placeholder.png"
-                alt="Key frames of swimmer motions comparing our method with baselines">
+            <img src="./assets/tab1.png" alt="Swimming performance comparison table">
             <p>For example, our policy learns a novel twisting-and-rotating motion for the torus shape and a rhythmic
                 "dancing" motion for the Enneper surface, both of which generate robust forward propulsion.</p>
+
+            <img src="./assets/torus.gif" alt="Torus swimming animation" style="border-radius:0%">
+
+            <img src="./assets/enneper.gif" alt="Enneper surface swimming animation" style="border-radius:0%">
+
+            <p>For the biomimetic morphologies, our method also discovers effective swimming strategies, comparable to
+                the expert-designed ones (clowngish and jellyfish below).</p>
+
+            <img src="./assets/fish.gif" alt="fish swimming animation" style="border-radius:0%">
+
+            <img src="./assets/jellyfish.gif" alt="jellyfish swimming animation" style="border-radius:0%">
+
+            <p>We also explored the capability of our method on more complex tasks such as navigation and flow
+                resistance: </p>
+
+            <img src="./assets/fish2d_forward.gif" alt="2D fish swimming forward animation" style="border-radius:0%">
+
+            <img src="./assets/fish2d_navigation.gif" alt="2D fish navigation animation" style="border-radius:0%">
+
+            <img src="./assets/fish2d_flow_resist.gif" alt="2D fish flow resistance animation" style="border-radius:0%">
+
+            <p>The energy cost can be easily integrated into current learning pipeline to discover more energy-efficient
+                policices.
+            </p>
+
+            <img src="./assets/fish2d_forward_saving_energy.gif" alt="Energy cost impact on swimming performance table">
+
+            <p>More results can be found in our paper and supplementary material.</p>
         </div>
 
         <div id="citation" class="section">
